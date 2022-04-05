@@ -1,10 +1,17 @@
 import React from 'react';
-import Button, { ButtonType, ButtonSize } from './components/Button/button';
+import Button from './components/Button/button';
+import MenuItem from './components/Menu/menuItem';
+import Menu from './components/Menu/menu';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Menu defaultIndex={'0'}>
+          <MenuItem>cool link</MenuItem>
+          <MenuItem>cool link2</MenuItem>
+          <MenuItem>cool link3</MenuItem>
+        </Menu>
         <Button
           onClick={(e) => {
             e.preventDefault();
@@ -15,17 +22,17 @@ function App() {
           Hello{' '}
         </Button>
         <Button disabled> Hello </Button>
-        <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>
+        <Button btnType={'primary'} size={'lg'}>
           Hello
         </Button>
-        <Button btnType={ButtonType.Danger} size={ButtonSize.Large}>
+        <Button btnType={'danger'} size={'lg'}>
           Hello
         </Button>
-        <Button btnType={ButtonType.Link} href="http://www.baidu.com">
+        <Button btnType={'link'} href="http://www.baidu.com">
           {' '}
           Baidu Link{' '}
         </Button>
-        <Button btnType={ButtonType.Link} href="http://www.baidu.com" disabled>
+        <Button btnType={'link'} href="http://www.baidu.com" disabled>
           {' '}
           Baidu Link{' '}
         </Button>
