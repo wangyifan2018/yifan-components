@@ -14,15 +14,38 @@ export interface MenuProps {
   /**设置子菜单的默认打开 只在纵向模式下生效 */
   defaultOpenSubMenus?: string[];
 }
+interface IMenuContext {
+  index: string;
+  onSelect?: (selectedIndex: string) => void;
+  mode?: MenuMode;
+  defaultOpenSubMenus?: string[];
+}
+
+export const MenuContext = createContext<IMenuContext>({ index: '0' });
 
 const Menu: React.FC<MenuProps> = (props) => {
-  const { className, mode, style, children, defaultIndex } = props;
+  const { className, mode, style, children, defaultIndex, onSelect } = props;
+  const [currentActive, setActive] = useState(defaultIndex);
   const classes = classNames('yifan-menu', className, {
     'menu-vertical': mode === 'vertical',
+    'menu-horizontal': mode !== 'vertical',
   });
+  const handleClick = (index: string) => {
+    setActive(index);
+    if (onSelect) {
+      onSelect(index);
+    }
+  };
+  const passedContext: IMenuContext = {
+    index: currentActive ? currentActive : '0',
+    onSelect: handleClick,
+    mode,
+  };
   return (
     <ul className={classes} style={style}>
-      {children}
+      <MenuContext.Provider value={passedContext}>
+        {children}
+      </MenuContext.Provider>
     </ul>
   );
 };
