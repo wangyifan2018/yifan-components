@@ -1,5 +1,5 @@
 import React from 'react';
-import Button, { ButtonType, ButtonSize } from './components/Button/button';
+import Button from './components/Button';
 
 function App() {
   return (
@@ -15,17 +15,17 @@ function App() {
           Hello{' '}
         </Button>
         <Button disabled> Hello </Button>
-        <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>
+        <Button btnType={'primary'} size={'lg'}>
           Hello
         </Button>
-        <Button btnType={ButtonType.Danger} size={ButtonSize.Large}>
+        <Button btnType={'danger'} size={'lg'}>
           Hello
         </Button>
-        <Button btnType={ButtonType.Link} href="http://www.baidu.com">
+        <Button btnType={'link'} href="http://www.baidu.com">
           {' '}
           Baidu Link{' '}
         </Button>
-        <Button btnType={ButtonType.Link} href="http://www.baidu.com" disabled>
+        <Button btnType={'link'} href="http://www.baidu.com" disabled>
           {' '}
           Baidu Link{' '}
         </Button>
