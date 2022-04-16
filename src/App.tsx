@@ -13,9 +13,9 @@ function App() {
             alert(index);
           }}
         >
-          <MenuItem index={0}>cool link</MenuItem>
-          <MenuItem index={1}>cool link2</MenuItem>
-          <MenuItem index={2}>cool link3</MenuItem>
+          <MenuItem>cool link</MenuItem>
+          <MenuItem>cool link2</MenuItem>
+          <MenuItem>cool link3</MenuItem>
         </Menu>
 
         <Button
