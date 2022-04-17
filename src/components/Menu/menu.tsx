@@ -23,6 +23,7 @@ const Menu: React.FC<MenuProps> = (props) => {
   const [currentActive, setActive] = useState(defaultIndex);
   const classes = classNames('viking-menu', className, {
     'menu-vertical': mode === 'vertical',
+    'menu-horizontal': mode !== 'vertical',
   });
 
   const handleClick = (index: number) => {
@@ -41,7 +42,8 @@ const Menu: React.FC<MenuProps> = (props) => {
       const chileElement =
         child as React.FunctionComponentElement<MenuItemProps>;
       const { displayName } = chileElement.type;
-      if (displayName === 'MenuItem') {
+      if (true) {
+        //displayName === 'MenuItem' || displayName === 'SubMenu'
         return React.cloneElement(chileElement, {
           index,
         });
