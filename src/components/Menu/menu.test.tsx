@@ -18,22 +18,22 @@ jest.mock('react-transition-group', () => {
   };
 });
 const testProps: MenuProps = {
-  defaultIndex: 0,
+  defaultIndex: '0',
   onSelect: jest.fn(),
   className: 'test',
 };
 const testVerProps: MenuProps = {
-  defaultIndex: 0,
+  defaultIndex: '0',
   mode: 'vertical',
 };
 const generateMenu = (props: MenuProps) => {
   return (
     <Menu {...props}>
-      <MenuItem index={0}>active</MenuItem>
-      <MenuItem disabled index={0}>
+      <MenuItem index="0">active</MenuItem>
+      <MenuItem disabled index="0">
         disabled
       </MenuItem>
-      <MenuItem index={0}>xyz</MenuItem>
+      <MenuItem index="0">xyz</MenuItem>
     </Menu>
   );
 };
