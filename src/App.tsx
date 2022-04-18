@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import Button from './components/Button';
 import Menu from './components/Menu/menu';
 import MenuItem from './components/Menu/menuItem';
@@ -7,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <FontAwesomeIcon icon={faCoffee} size="10x" />;
         <Menu
           defaultIndex="0"
           onSelect={(index) => {
@@ -23,7 +26,6 @@ function App() {
           </SubMenu>
           <MenuItem>cool link3</MenuItem>
         </Menu>
-
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
