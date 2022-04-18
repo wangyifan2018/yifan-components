@@ -11,14 +11,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Icon icon="arrow-down" theme="primary" size="10x" />
+        {/* <Icon icon="arrow-down" theme="primary" size="10x" /> */}
         <Menu
           defaultIndex="0"
           onSelect={(index) => {
             alert(index);
           }}
           mode="vertical"
-          defaultOpenSubMenus={['2']}
+          // defaultOpenSubMenus={['2']}
         >
           <MenuItem>cool link</MenuItem>
           <MenuItem>cool link2</MenuItem>
